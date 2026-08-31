@@ -1,4 +1,4 @@
-# tempo
+# FocusFlow
 
 A desktop-style productivity dashboard inspired by the classic Windows iTunes music app aesthetic, redesigned for a focus-first PC experience.
 
