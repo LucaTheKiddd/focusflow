@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusFlow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">F</div>
+          <div class="brand-copy">
+            <span class="brand-name">FocusFlow</span>
+            <span class="brand-sub">focus suite</span>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button id="saveButton" class="secondary-btn">Save</button>
+          <button id="startSessionButton" class="primary-btn">Start focus</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="sidebar left-panel">
+          <div class="panel-header">
+            <span>Sessions</span>
+            <button id="newSessionBtn" class="tiny-btn">+ New</button>
+          </div>
+
+          <div id="sessionList" class="session-list"></div>
+
+          <div class="stats-panel">
+            <div class="section-label">Today</div>
+            <div class="stat-row">
+              <span>Focus</span>
+              <strong id="totalFocus">02:45</strong>
+            </div>
+            <div class="stat-row">
+              <span>Tasks</span>
+              <strong id="finishedTasks">4/5</strong>
+            </div>
+          </div>
+        </aside>
+
+        <section class="timer-panel">
+          <div class="timer-card">
+            <div class="timer-ring" id="timerRing">
+              <div class="timer-center">
+                <span class="mode-label" id="modeTag">Focus</span>
+                <span class="time" id="timeDisplay">25:00</span>
+              </div>
+            </div>
+
+            <div class="timer-actions">
+              <button id="toggleTimer" class="primary-btn wide">Start</button>
+              <button id="skipTimer" class="secondary-btn">Skip</button>
+            </div>
+          </div>
+        </section>
+
+        <aside class="sidebar right-panel">
+          <div class="panel-header">
+            <span>Tasks</span>
+            <button id="addTaskHeaderBtn" class="tiny-btn">Add</button>
+          </div>
+
+          <div class="task-input-row">
+            <input id="taskInput" type="text" placeholder="Add a task" />
+            <select id="taskPriority" aria-label="Task priority">
+              <option value="High">High</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="Low">Low</option>
+            </select>
+            <button id="addTaskBtn">+</button>
+          </div>
+
+          <div id="taskList" class="task-list"></div>
+
+          <div class="note-panel">
+            <div class="panel-header small-header">
+              <span>Notes</span>
+              <button id="saveNoteBtn" class="tiny-btn">Save</button>
+            </div>
+            <textarea id="noteInput" rows="5" placeholder="Capture a thought..."></textarea>
+            <div id="noteList" class="note-list"></div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
